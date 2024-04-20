@@ -1,0 +1,137 @@
+/* CSS styles for Volunteerism website */
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: right; /* Aligning header items to the right */
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav {
+    text-align: left; /* Aligning navigation links to the left */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Main content styles */
+.main-content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.black-background {
+    background-color: #333;
+    color: #fff;
+}
+
+.white-background {
+    background-color: #fff;
+}
+
+/* Image styles */
+.image-container {
+    margin: 20px auto; /* Centering the image */
+    max-width: 80%; /* Adjusting the maximum width */
+}
+
+.centered-image {
+    max-width: 100%;
+    height: auto; /* Allowing the height to adjust accordingly */
+}
+
+/* Right name styles */
+.right-name {
+    text-align: center;
+    padding: 20px;
+}
+
+.right-name h2 {
+    font-size: 24px;
+    color: #000; /* Change color as needed */
+}
+
+/* Promo box styles */
+.promo-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.promo-box .unit-copy-wrapper {
+    width: 50%;
+    text-align: left;
+}
+
+.promo-box .unit-copy-wrapper h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.promo-box .unit-copy-wrapper h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.promo-box .cta-links {
+    margin-top: 20px;
+}
+
+.promo-box .cta-links a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Unit image styles */
+.unit-image-wrapper {
+    width: 50%;
+}
+
+.unit-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Animation */
+.animate-slide-in {
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

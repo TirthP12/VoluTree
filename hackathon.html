@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Volunteer Opportunities</title>
+    <link rel="stylesheet" href="hackathon.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .opportunity {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .opportunity:last-child {
+            border-bottom: none;
+        }
+
+        .opportunity h2 {
+            margin-top: 0;
+        }
+
+        .create-btn {
+            background-color: navy;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Volunteer Opportunities</h1>
+    </header>
+    <main>
+        <div class="container" id="opportunities">
+            <!-- Existing opportunities will be populated here -->
+        </div>
+        <button class="create-btn" onclick="createNewVolunteerOpportunity()">Create New Volunteer Opportunity</button>
+    </main>
+
+    <script>
+        function createNewVolunteerOpportunity() {
+            const opportunitiesContainer = document.getElementById("opportunities");
+            const newOpportunity = document.createElement("div");
+            newOpportunity.classList.add("opportunity");
+            newOpportunity.innerHTML = `
+                <h2>${prompt("Enter volunteer opportunity title:")}</h2>
+                <p>Date: ${prompt("Enter opportunity date:")}</p>
+                <p>Location: ${prompt("Enter opportunity location:")}</p>
+                <p>Details: ${prompt("Enter opportunity details:")}</p>
+            `;
+            opportunitiesContainer.appendChild(newOpportunity);
+        }
+    </script>
 </body>
 </html>
