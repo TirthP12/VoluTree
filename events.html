@@ -17,6 +17,28 @@
         form select,
         form button {
             margin-bottom: 15px;
+            width: 100%; /* Make inputs full width */
+            padding: 10px; /* Add padding for better appearance */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Make the container full height of viewport */
+        }
+
+        .left {
+            max-width: 600px; /* Limit the width of the form */
+            width: 100%;
+        }
+
+        .curved-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
         }
     </style>
 </head>
@@ -31,7 +53,8 @@
             <p></p>
             <div class="curved-box">
                 <form id="eventForm" class="form">
-                 
+                    <label for="eventType">Event Type:</label><br>
+                    <select id="eventType" name="eventType" required>
                         <!-- JavaScript will populate the options dynamically -->
                     </select><br>
                     <label for="location">Location:</label><br>
