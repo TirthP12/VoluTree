@@ -1,54 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events</title>
-<link rel="stylesheet" href="fund.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
-<style>
-  body {
-    @apply leading-[1.6] text-[#333];
-    font-family: "Poppins", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  .fundraiser-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+/* events.css */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.curved-box {
+    background-color: #b3d9ff; /* Light blue background */
+    color: #333; /* Text color */
+    text-align: left;
     padding: 20px;
-  }
-  .curved-box {
-    @apply w-[350px] bg-[#f0f0f0] text-left shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] mx-auto my-[50px] p-5 rounded-[20px];
-  }
-  h1 {
-    @apply text-2xl text-[#FE8B55] not-italic mb-2.5;
-  }
-  .context {
-    @apply text-base mb-2.5;
-  }
-  .progress {
-    @apply bg-[#ddd] h-5 mb-2.5 rounded-[10px];
-  }
-  .progress-bar {
-    @apply bg-[#4caf50] h-full w-[10%] rounded-[10px];
-  }
-  .location {
-    @apply mb-2.5;
-  }
-  .find-location-btn {
-    @apply bg-[white] text-[red] cursor-pointer text-sm px-2.5 py-[5px] rounded-[20px] border-2 border-solid border-[red];
-  }
-  .learn-more-btn {
-    @apply bg-[#FE8B55] text-[white] cursor-pointer text-base px-5 py-2.5 rounded-[5px] border-[none];
-  }
-  .hackathon-link {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #FE8B55;
-    color: white;
-    border: none;
-    padding: 10px 20px
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.curved-box h1 {
+    font-size: 24px; /* Title font size */
+    color: #FE8B55; /* Title color */
+    font-style: normal;
+    margin-bottom: 15px;
+}
+
+.curved-box .context {
+    font-size: 16px; /* Content font size */
+    margin-bottom: 15px;
+}
+
+.curved-box .location {
+    font-size: 16px; /* Content font size */
+    margin-bottom: 15px;
+}
+
+/* You can adjust the styles further based on your preferences */

@@ -4,27 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
-    <link rel="stylesheet" href="events.css"> 
+    <link rel="stylesheet" href="events.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <div id="eventsContainer"></div>
+    <header>
+        <h1>Upcoming Events</h1>
+    </header>
+
+    <div id="eventsContainer" class="container">
+        <!-- Event cards will be dynamically added here -->
+    </div>
 
     <script>
+        // Retrieve events from localStorage and display them
         const events = JSON.parse(localStorage.getItem('events')) || [];
         const eventsContainer = document.getElementById('eventsContainer');
-        events.forEach(event => {
-            const eventDiv = document.createElement('div');
-            eventDiv.classList.add('curved-box');
-            eventDiv.innerHTML = `
-                <h1>${event.eventName}</h1>
-                <div class="context"><b>🕐 Event Date:</b> ${event.eventDate}</div>
-                <div class="context"><b>🎯 Event Goal:</b> ${event.eventGoal}</div>
-                <div class="location">
-                    <b>📍 Event Location:</b>
-                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.eventLocation)}" target="_blank">${event.eventLocation}</a>
+
+        events.forEach(eventData => {
+            const eventCard = document.createElement('div');
+            eventCard.classList.add('event-card');
+            eventCard.innerHTML = `
+                <div class="event-info">
+                    <h3>${eventData.eventName}</h3>
+                    <p>Date: ${eventData.eventDate}</p>
+                    <p>Location: ${eventData.eventLocation}</p>
                 </div>
+                <button class="register-button" data-event="${eventData.eventName}">Register</button>
             `;
-            eventsContainer.appendChild(eventDiv);
+            eventsContainer.appendChild(eventCard);
+        });
+
+        // Register button click handler
+        document.querySelectorAll('.register-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const eventName = this.getAttribute('data-event');
+                const studentName = prompt("Enter your name:");
+                const studentEmail = prompt("Enter your email:");
+
+                if (studentName && studentEmail) {
+                    const registrationData = { eventName, studentName, studentEmail };
+                    const registrations = JSON.parse(localStorage.getItem('registrations')) || [];
+                    registrations.push(registrationData);
+                    localStorage.setItem('registrations', JSON.stringify(registrations));
+                    alert("Registration Successful!");
+                } else {
+                    alert("Please enter your name and email.");
+                }
+            });
         });
     </script>
 </body>

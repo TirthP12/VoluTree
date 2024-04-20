@@ -1,109 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fundraiser Array</title>
-<link rel="stylesheet" href="fund.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Roboto', sans-serif; 
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .form-container {
-    width: 400px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
-  input[type="text"],
-  input[type="email"],
-  input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  input[type="submit"] {
-    background-color: #fe8b55;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  input[type="submit"]:hover {
-    background-color: #ff7043;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon</title>
+    <link rel="stylesheet" href="hackathon.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+    <header>
+        <h1>Welcome to Our Hackathon</h1>
+    </header>
 
-<div class="form-container">
-  <h2>Register for Fundraiser</h2>
-  <form id="fundraiser-form" onsubmit="createNewFundraiser(event)">
-    <input type="text" id="company-name" placeholder="Company Name" required><br>
-    <input type="email" id="email" placeholder="Email" required><br>
-    <input type="text" id="title" placeholder="Fundraiser Title" required><br>
-    <input type="date" id="date" required><br>
-    <input type="number" id="goal" placeholder="Fundraiser Goal" required><br>
-    <input type="text" id="location" placeholder="Fundraiser Location" required><br>
-    <input type="submit" value="Create Fundraiser">
-  </form>
-</div>
+    <div class="container">
+        <div class="left">
+            <h2>Event Registration</h2>
+            <p>Register now to join the hackathon:</p>
+            <div class="curved-box">
+                <form id="eventForm">
+                    <label for="eventName">Select Event:</label><br>
+                    <select id="eventName" name="eventName" required>
+                        <option value="" disabled selected>Select an event</option>
+                        <!-- JavaScript will populate the options dynamically -->
+                    </select><br>
+                    <label for="studentName">Your Name:</label><br>
+                    <input type="text" id="studentName" name="studentName" required><br>
+                    <label for="studentEmail">Your Email:</label><br>
+                    <input type="email" id="studentEmail" name="studentEmail" required><br>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<a href="events.html" class="view-events-btn">View Events</a>
+    <footer>
+        <p>&copy; 2024 Tirth D Patel</p>
+    </footer>
 
-<script>
-function createNewFundraiser(event) {
-    event.preventDefault();
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Registration Successful! You're all set for the Hackathon.</p>
+            <button id="eventsButton">See All Events</button>
+        </div>
+    </div>
 
-    const companyName = document.getElementById("company-name").value;
-    const email = document.getElementById("email").value;
-    const title = document.getElementById("title").value;
-    const date = document.getElementById("date").value;
-    const goal = document.getElementById("goal").value;
-    const location = document.getElementById("location").value;
+    <script>
+        // Populate event dropdown dynamically
+        const events = JSON.parse(localStorage.getItem('events')) || [];
+        const eventDropdown = document.getElementById('eventName');
 
-    const newEventData = {
-        companyName: companyName,
-        email: email,
-        title: title,
-        date: date,
-        goal: goal,
-        location: location
-    };
+        events.forEach(event => {
+            const option = document.createElement('option');
+            option.textContent = event.eventName;
+            option.value = event.eventName;
+            eventDropdown.appendChild(option);
+        });
 
-    fetch('/fundraisers', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newEventData)
-    }).then(response => {
-        if (response.ok) {
+        document.getElementById("eventForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const selectedEvent = document.getElementById("eventName").value;
+            const studentName = document.getElementById("studentName").value;
+            const studentEmail = document.getElementById("studentEmail").value;
+            
+            const registrationData = { eventName: selectedEvent, studentName, studentEmail };
+            const registrations = JSON.parse(localStorage.getItem('registrations')) || [];
+            registrations.push(registrationData);
+            localStorage.setItem('registrations', JSON.stringify(registrations));
+
+            // Display modal or any confirmation message
+            document.getElementById('myModal').style.display = "block";
+        });
+
+        // Close modal when clicking on the close button
+        document.querySelector(".close").addEventListener("click", function() {
+            document.getElementById('myModal').style.display = "none";
+        });
+
+        // Open events.html when clicking on "See All Events" button
+        document.getElementById("eventsButton").addEventListener("click", function() {
             window.location.href = "events.html";
-        } else {
-            throw new Error('Error creating fundraiser.');
-        }
-    }).catch(error => {
-        console.error('Error:', error);
-        alert('Error creating fundraiser.');
-    });
-}
-</script>
-
+        });
+    </script>
 </body>
 </html>
