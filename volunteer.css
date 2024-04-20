@@ -7,13 +7,13 @@
     box-sizing: border-box;
 }
 
+/* Button styles */
 .button {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
     color: white;
     border-radius: 5px;
-    padding: 20;
 }
 
 .button-black {
@@ -127,38 +127,6 @@ nav a {
     font-size: 18px;
     margin-bottom: 20px;
 }
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-}
-.button-black {
-    background-color: #000;
-    margin-bottom: 20px; /* Adjust spacing as needed */
-}
-
-.button-black:hover {
-    background-color: #333;
-}
-
-
-.button-black:hover {
-    background-color: #333;
-}
-
-.icon {
-    vertical-align: middle;
-}
-
-.icon-after {
-    margin-left: 10px;
-}
-
-span {
-    margin-right: 5px;
-}
 
 .promo-box .cta-links {
     margin-top: 20px;
@@ -181,18 +149,46 @@ span {
     border-radius: 25px;
 }
 
-/* Animation */
-.animate-slide-in {
-    animation: slideIn 1s ease forwards;
+/* Form styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #333;
 }

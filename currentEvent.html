@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Events</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+<style>
+  body {
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text color */
+  }
+  header {
+    background-color: #000000; /* Black header background */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 24px; /* Smaller title size */
+    color: rgb(255, 255, 255); /* Navy title color */
+  }
+  h6 {
+    font-size: 20px; /* Adjusted title size */
+    color: navy; /* Navy color */
+    margin-top: 0; /* Remove default margin */
+  }
+  .fundraiser-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .curved-box {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid navy; /* Navy border */
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    display: flex; /* Added */
+    flex-direction: column; /* Added */
+    justify-content: space-between; /* Added */
+  }
+  .find-location-btn,
+  .learn-more-btn {
+    background-color: navy; /* Navy button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Added margin */
+  }
+  .find-location-btn:hover,
+  .learn-more-btn:hover {
+    background-color: #001f3f; /* Darker navy on hover */
+  }
+  .create-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: navy; /* Navy button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Current Events</h1>
+</header>
+
+<div class="fundraiser-container" id="fundraiser-container">
+  <div class="curved-box">
+    <h6>Mount Prospect Police Water Distribution</h6>
+    <div class="context"><b>&#x1F550; When is the fundraiser?</b></div>
+    <div class="context">April 20, 2024</div>
+    <div class="context"><b>&#x1F4CD; What is the goal?</b></div>
+    <div class="context">Our mission is to help our 5K runners receive water from our volunteers.</div>
+    <div class="location"><b>&#x1F5FA; Where is it happening? <button class="find-location-btn" onclick="openGoogleMaps()">Find Location</button></b></div>
+    <div class="location">811 Kensington Road, Mount Prospect, Illinois 60056 </div>
+    <div class="progress">
+      <div class="progress-bar" style="width: 0%;"></div>
+    </div>
+    <div class="progress-text">8 Volunteers Needed</div>
+    <button class="learn-more-btn" onclick="redirectToEventsPage()">Register</button>
+  </div>
+</div>
+
+<script>
+function openGoogleMaps() {
+  // Replace these coordinates with the ones set by the admin
+  const latitude = 37.7749; // Example latitude
+  const longitude = -122.4194; // Example longitude
+  const url = `https://www.google.com/maps?q=${latitude},${longitude}`;
+  window.open(url, '_blank');
+}
+
+function redirectToEventsPage() {
+  window.location.href = 'events.html';
+}
+</script>
+
+</body>
+</html>
+l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,35 +1,271 @@
-/* events.css */
+/* Add your CSS styling here */
 
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+.header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.left {
+    text-align: center;
+}
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20;
+    spacing: 20;
 }
 
 .curved-box {
-    background-color: #b3d9ff; /* Light blue background */
-    color: #333; /* Text color */
-    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
 }
 
-.curved-box h1 {
-    font-size: 24px; /* Title font size */
-    color: #FE8B55; /* Title color */
-    font-style: normal;
-    margin-bottom: 15px;
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.curved-box .context {
-    font-size: 16px; /* Content font size */
-    margin-bottom: 15px;
+.footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+}
+/* CSS styles for Volunteerism website */
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.curved-box .location {
-    font-size: 16px; /* Content font size */
-    margin-bottom: 15px;
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 8px 16px; /* Reduced padding */
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
 }
 
-/* You can adjust the styles further based on your preferences */
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0; /* Remove default body margin */
+}
+
+/* Header styles */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 16px; /* Reduced padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 20px; /* Reduced font size */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px; /* Reduced margin */
+}
+
+/* Main content styles */
+.main-content {
+    padding: 30px 20px; /* Reduced padding */
+}
+
+/* Image styles */
+.image-container {
+    margin: 10px auto; /* Reduced margin */
+    max-width: 90%; /* Adjusted maximum width */
+}
+
+.right-name {
+    padding: 10px; /* Reduced padding */
+}
+
+.right-name h2 {
+    font-size: 20px; /* Reduced font size */
+}
+
+/* Promo box styles */
+.promo-box {
+    padding: 30px; /* Reduced padding */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.promo-box .unit-copy-wrapper h4 {
+    font-size: 20px; /* Reduced font size */
+}
+
+.promo-box .unit-copy-wrapper h5 {
+    font-size: 16px; /* Reduced font size */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.promo-box .cta-links a {
+    margin-right: 40px; /* Reduced margin */
+}
+
+/* Unit image styles */
+.unit-image-wrapper img {
+    border-radius: 20px; /* Reduced border radius */
+}
+
+/* Form styles */
+.form-container {
+    max-width: 500px; /* Reduced max width */
+    padding: 20px; /* Reduced padding */
+}
+
+label {
+    margin-bottom: 3px; /* Reduced margin */
+}
+/* CSS styles for Volunteerism website */
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 6px 12px; /* Further reduced padding */
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0; /* Remove default body margin */
+}
+
+/* Header styles */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 12px; /* Further reduced padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 18px; /* Further reduced font size */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 8px; /* Further reduced margin */
+}
+
+/* Main content styles */
+.main-content {
+    padding: 20px; /* Further reduced padding */
+}
+
+/* Image styles */
+.image-container {
+    margin: 8px auto; /* Further reduced margin */
+    max-width: 90%; /* Adjusted maximum width */
+}
+
+.right-name {
+    padding: 8px; /* Further reduced padding */
+}
+
+.right-name h2 {
+    font-size: 16px; /* Further reduced font size */
+}
+
+/* Promo box styles */
+.promo-box {
+    padding: 20px; /* Further reduced padding */
+    margin-bottom: 8px; /* Further reduced margin */
+}
+
+.promo-box .unit-copy-wrapper h4 {
+    font-size: 18px; /* Further reduced font size */
+}
+
+.promo-box .unit-copy-wrapper h5 {
+    font-size: 14px; /* Further reduced font size */
+    margin-bottom: 8px; /* Further reduced margin */
+}
+
+.promo-box .cta-links a {
+    margin-right: 30px; /* Further reduced margin */
+}
+
+/* Unit image styles */
+.unit-image-wrapper img {
+    border-radius: 15px; /* Further reduced border radius */
+}
+
+/* Form styles */
+.form-container {
+    max-width: 450px; /* Further reduced max width */
+    padding: 16px; /* Further reduced padding */
+}
+
+label {
+    margin-bottom: 2px; /* Further reduced margin */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 6px; /* Further reduced padding */
+    margin-bottom: 6px; /* Further reduced margin */
+}
+
+button[type="submit"] {
+    padding: 6px 12px; /* Further reduced padding */
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+button[type="submit"] {
+    padding: 8px 16px; /* Reduced padding */
+}
+
+.email-input {
+    height: 20px;
+    
+}
