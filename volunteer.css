@@ -7,6 +7,31 @@
     box-sizing: border-box;
 }
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 20;
+}
+
+.button-black {
+    background-color: #000;
+}
+
+.button-black:hover {
+    background-color: #333;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+.icon-after {
+    margin-left: 5px;
+}
+
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
@@ -19,21 +44,24 @@ header {
     background-color: #000;
     color: #fff;
     padding: 20px;
-    text-align: right; /* Aligning header items to the right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
+.title h1 {
     font-size: 24px;
 }
 
 nav {
-    text-align: left; /* Aligning navigation links to the left */
+    display: flex;
+    align-items: center;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 /* Main content styles */
@@ -43,7 +71,7 @@ nav a {
 }
 
 .black-background {
-    background-color: #333;
+    background-color: #f9f9f9;
     color: #fff;
 }
 
@@ -99,6 +127,38 @@ nav a {
     font-size: 18px;
     margin-bottom: 20px;
 }
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+.button-black {
+    background-color: #000;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.button-black:hover {
+    background-color: #333;
+}
+
+
+.button-black:hover {
+    background-color: #333;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+.icon-after {
+    margin-left: 10px;
+}
+
+span {
+    margin-right: 5px;
+}
 
 .promo-box .cta-links {
     margin-top: 20px;
@@ -107,7 +167,7 @@ nav a {
 .promo-box .cta-links a {
     color: #333;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 80px;
 }
 
 /* Unit image styles */
@@ -118,6 +178,7 @@ nav a {
 .unit-image-wrapper img {
     max-width: 100%;
     height: auto;
+    border-radius: 25px;
 }
 
 /* Animation */

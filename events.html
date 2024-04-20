@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="events.css"> 
+</head>
+<body>
+    <div id="eventsContainer"></div>
+
+    <script>
+        const events = JSON.parse(localStorage.getItem('events')) || [];
+        const eventsContainer = document.getElementById('eventsContainer');
+        events.forEach(event => {
+            const eventDiv = document.createElement('div');
+            eventDiv.classList.add('curved-box');
+            eventDiv.innerHTML = `
+                <h1>${event.eventName}</h1>
+                <div class="context"><b>🕐 Event Date:</b> ${event.eventDate}</div>
+                <div class="context"><b>🎯 Event Goal:</b> ${event.eventGoal}</div>
+                <div class="location">
+                    <b>📍 Event Location:</b>
+                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.eventLocation)}" target="_blank">${event.eventLocation}</a>
+                </div>
+            `;
+            eventsContainer.appendChild(eventDiv);
+        });
+    </script>
+</body>
+</html>

@@ -1,70 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Opportunities</title>
-    <link rel="stylesheet" href="hackathon.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .opportunity {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-
-        .opportunity:last-child {
-            border-bottom: none;
-        }
-
-        .opportunity h2 {
-            margin-top: 0;
-        }
-
-        .create-btn {
-            background-color: navy;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundraiser Array</title>
+<link rel="stylesheet" href="fund.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #fe8b55;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  input[type="submit"]:hover {
+    background-color: #ff7043;
+  }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Volunteer Opportunities</h1>
-    </header>
-    <main>
-        <div class="container" id="opportunities">
-            <!-- Existing opportunities will be populated here -->
-        </div>
-        <button class="create-btn" onclick="createNewVolunteerOpportunity()">Create New Volunteer Opportunity</button>
-    </main>
 
-    <script>
-        function createNewVolunteerOpportunity() {
-            const opportunitiesContainer = document.getElementById("opportunities");
-            const newOpportunity = document.createElement("div");
-            newOpportunity.classList.add("opportunity");
-            newOpportunity.innerHTML = `
-                <h2>${prompt("Enter volunteer opportunity title:")}</h2>
-                <p>Date: ${prompt("Enter opportunity date:")}</p>
-                <p>Location: ${prompt("Enter opportunity location:")}</p>
-                <p>Details: ${prompt("Enter opportunity details:")}</p>
-            `;
-            opportunitiesContainer.appendChild(newOpportunity);
+<div class="form-container">
+  <h2>Register for Fundraiser</h2>
+  <form id="fundraiser-form" onsubmit="createNewFundraiser(event)">
+    <input type="text" id="company-name" placeholder="Company Name" required><br>
+    <input type="email" id="email" placeholder="Email" required><br>
+    <input type="text" id="title" placeholder="Fundraiser Title" required><br>
+    <input type="date" id="date" required><br>
+    <input type="number" id="goal" placeholder="Fundraiser Goal" required><br>
+    <input type="text" id="location" placeholder="Fundraiser Location" required><br>
+    <input type="submit" value="Create Fundraiser">
+  </form>
+</div>
+
+<a href="events.html" class="view-events-btn">View Events</a>
+
+<script>
+function createNewFundraiser(event) {
+    event.preventDefault();
+
+    const companyName = document.getElementById("company-name").value;
+    const email = document.getElementById("email").value;
+    const title = document.getElementById("title").value;
+    const date = document.getElementById("date").value;
+    const goal = document.getElementById("goal").value;
+    const location = document.getElementById("location").value;
+
+    const newEventData = {
+        companyName: companyName,
+        email: email,
+        title: title,
+        date: date,
+        goal: goal,
+        location: location
+    };
+
+    fetch('/fundraisers', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newEventData)
+    }).then(response => {
+        if (response.ok) {
+            window.location.href = "events.html";
+        } else {
+            throw new Error('Error creating fundraiser.');
         }
-    </script>
+    }).catch(error => {
+        console.error('Error:', error);
+        alert('Error creating fundraiser.');
+    });
+}
+</script>
+
 </body>
 </html>
